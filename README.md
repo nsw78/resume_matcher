@@ -22,17 +22,21 @@ Este projeto utiliza inteligência artificial para classificar automaticamente c
 
 ```
 
-resume\_matcher/
+## 📁 Estrutura do Projeto
+
+```plaintext
+resume_matcher/
 ├── app.py                      # Aplicação principal (Streamlit)
 ├── utils.py                    # Funções auxiliares (embeddings e FAISS)
 ├── requirements.txt            # Dependências do projeto
 ├── .env                        # Chave da OpenAI (não subir para o GitHub)
 ├── data/
-│   ├── job\_description.txt     # Descrição da vaga
+│   ├── job_description.txt     # Descrição da vaga
 │   └── resumes/
 │       ├── resume1.txt         # Currículo 1
 │       └── resume2.txt         # Currículo 2
 ├── embeddings/                 # Diretório para salvar FAISS index (opcional)
+
 
 ````
 
