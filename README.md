@@ -1,13 +1,5 @@
-Claro, Nelson! Aqui está seu `README.md` totalmente corrigido, organizado e formatado corretamente para o GitHub — com:
 
-* ✅ Estrutura Markdown válida
-* ✅ Blocos de código fechados corretamente
-* ✅ Sem duplicação de títulos
-* ✅ Seção de versões bem destacada
-
----
-
-### ✅ `README.md` corrigido:
+### Local-ia - sem openai
 
 ````markdown
 # 🤖 Resume Matcher com IA (LLM + Embeddings + FAISS)
