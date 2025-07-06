@@ -1,39 +1,36 @@
 import os
 import streamlit as st
-from utils import get_embedding, embed_resumes, build_faiss_index
-import numpy as np
-import faiss
+from utils import embed_resumes, build_faiss_index
 
-# Carregar currículos
-resume_dir = "data/resumes"
-resumes = []
-resume_names = []
-for fname in os.listdir(resume_dir):
-    with open(os.path.join(resume_dir, fname), "r", encoding="utf-8") as f:
-        resumes.append(f.read())
-        resume_names.append(fname)
+def load_resumes(path):
+    resumes = []
+    filenames = []
+    for filename in os.listdir(path):
+        if filename.endswith(".txt"):
+            with open(os.path.join(path, filename), "r", encoding="utf-8") as f:
+                resumes.append(f.read())
+                filenames.append(filename)
+    return resumes, filenames
 
-# Carregar descrição da vaga
-with open("data/job_description.txt", "r", encoding="utf-8") as f:
-    job_description = f.read()
+def main():
+    st.title("🧠 Resume Matcher (IA Local)")
 
-# Embeddings
-st.title("🔍 Classificador de Currículos com IA")
-st.write("Comparando candidatos com a descrição da vaga...")
+    resumes, filenames = load_resumes("data/resumes")
+    resume_embeddings = embed_resumes(resumes)
+    index = build_faiss_index(resume_embeddings)
 
-resume_embeddings = embed_resumes(resumes)
-index = build_faiss_index(resume_embeddings)
+    st.success(f"{len(resumes)} currículos carregados.")
 
-# Embed da vaga
-job_embedding = get_embedding(job_description)
-job_embedding = np.array([job_embedding]).astype("float32")
+    query = st.text_area("📝 Cole aqui a descrição da vaga", height=200)
 
-# Busca por similaridade
-k = min(5, len(resumes))
-distances, indices = index.search(job_embedding, k)
+    if query:
+        query_embedding = embed_resumes([query])
+        D, I = index.search(query_embedding.astype("float32"), k=3)
 
-# Resultados
-st.subheader("🔝 Candidatos mais compatíveis:")
-for i, idx in enumerate(indices[0]):
-    st.markdown(f"**{i+1}. {resume_names[idx]}** - Similaridade: {round(1 - distances[0][i], 2)}")
-    st.code(resumes[idx], language="text")
+        st.subheader("🔍 Melhores currículos encontrados:")
+        for rank, i in enumerate(I[0]):
+            st.markdown(f"**#{rank+1}: {filenames[i]}**")
+            st.code(resumes[i][:1500] + "...", language="text")  # Mostra o início do currículo
+
+if __name__ == "__main__":
+    main()

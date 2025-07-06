@@ -1,15 +1,13 @@
 import os
 import faiss
 import numpy as np
-import openai
-from dotenv import load_dotenv
-load_dotenv()
+from sentence_transformers import SentenceTransformer
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Baixa o modelo uma vez e carrega localmente
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-def get_embedding(text: str, model="text-embedding-ada-002") -> list:
-    response = openai.Embedding.create(input=[text], model=model)
-    return response["data"][0]["embedding"]
+def get_embedding(text: str) -> list:
+    return model.encode(text)
 
 def embed_resumes(resume_texts):
     embeddings = [get_embedding(text) for text in resume_texts]
