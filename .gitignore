@@ -1,0 +1,11 @@
+# Ignorar arquivos sensíveis e desnecessários
+
+# Ambiente virtual do Python
+.venv/
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Arquivo de variáveis secretas
+.env
