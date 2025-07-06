@@ -163,9 +163,4 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 Feito com ❤️ por [Nelson Walcow](https://github.com/nsw78)
 
-```
-
----
-
-Se quiser que eu crie um PR no GitHub com isso, ou salve como `.md` e envie em `.zip`, é só falar!
-```
+´´
