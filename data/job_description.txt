@@ -1,0 +1,1 @@
+Estamos buscando um desenvolvedor backend com experiência sólida em Python, FastAPI, testes automatizados e conhecimento de DevOps (Docker, CI/CD). Desejável conhecimento em cloud (AWS).

@@ -1,0 +1,7 @@
+openai
+faiss-cpu
+pandas
+numpy
+streamlit
+tqdm
+python-dotenv
