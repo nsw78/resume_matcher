@@ -1,14 +1,18 @@
+Claro, Nelson! Aqui está seu `README.md` totalmente corrigido, organizado e formatado corretamente para o GitHub — com:
+
+* ✅ Estrutura Markdown válida
+* ✅ Blocos de código fechados corretamente
+* ✅ Sem duplicação de títulos
+* ✅ Seção de versões bem destacada
 
 ---
 
-```markdown
+### ✅ `README.md` corrigido:
+
+````markdown
 # 🤖 Resume Matcher com IA (LLM + Embeddings + FAISS)
 
 Este projeto utiliza inteligência artificial para classificar automaticamente currículos com base na descrição de uma vaga. Ele compara o conteúdo dos currículos com a vaga informada usando embeddings de linguagem natural e busca vetorial com FAISS.
-
-# 🤖 Resume Matcher
-
-Uma aplicação de IA que compara currículos com descrições de vagas usando embeddings vetoriais e busca por similaridade.
 
 ---
 
@@ -23,22 +27,19 @@ Você pode trocar de versão com:
 
 ```bash
 git checkout local-ia
+````
 
 ---
 
 ## 🚀 Funcionalidades
 
-- 🧠 Geração de embeddings com modelo da OpenAI (`text-embedding-ada-002`)
-- 🔍 Busca vetorial com FAISS para encontrar os candidatos mais compatíveis
-- 💡 Interface interativa com Streamlit
-- 📂 Leitura de currículos em `.txt`
-- ✅ Projeto simples, local, fácil de rodar e escalar
+* 🧠 Geração de embeddings com modelo da OpenAI (`text-embedding-ada-002`) ou local
+* 🔍 Busca vetorial com FAISS para encontrar os candidatos mais compatíveis
+* 💡 Interface interativa com Streamlit
+* 📂 Leitura de currículos em `.txt`
+* ✅ Projeto simples, local, fácil de rodar e escalar
 
 ---
-
-## 📁 Estrutura do Projeto
-
-```
 
 ## 📁 Estrutura do Projeto
 
@@ -54,17 +55,15 @@ resume_matcher/
 │       ├── resume1.txt         # Currículo 1
 │       └── resume2.txt         # Currículo 2
 ├── embeddings/                 # Diretório para salvar FAISS index (opcional)
-
-
-````
+```
 
 ---
 
 ## ⚙️ Pré-requisitos
 
-- Python 3.8+
-- Conta na [OpenAI](https://platform.openai.com/) com chave de API
-- Git (para versionamento)
+* Python 3.8+
+* Conta na [OpenAI](https://platform.openai.com/) com chave de API (apenas para a branch `main`)
+* Git (para versionamento)
 
 ---
 
@@ -73,9 +72,9 @@ resume_matcher/
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/resume_matcher.git
+git clone https://github.com/nsw78/resume_matcher.git
 cd resume_matcher
-````
+```
 
 ### 2. Crie e ative o ambiente virtual
 
@@ -99,7 +98,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Crie o arquivo `.env` com sua chave da OpenAI
+### 4. (Opcional) Crie o arquivo `.env` com sua chave da OpenAI
 
 Na raiz do projeto, crie um arquivo `.env` com o seguinte conteúdo:
 
@@ -107,7 +106,7 @@ Na raiz do projeto, crie um arquivo `.env` com o seguinte conteúdo:
 OPENAI_API_KEY=sk-...sua-chave-aqui...
 ```
 
-> **⚠️ Nunca suba sua chave para o GitHub!** Certifique-se de que o arquivo `.env` esteja no `.gitignore`.
+> ⚠️ **Nunca suba sua chave para o GitHub!** Certifique-se de que o arquivo `.env` esteja no `.gitignore`.
 
 ---
 
@@ -144,7 +143,7 @@ A IA irá analisar a compatibilidade dos currículos com a vaga e mostrar os can
 
 * [Python](https://www.python.org/)
 * [Streamlit](https://streamlit.io/)
-* [OpenAI API](https://platform.openai.com/)
+* [OpenAI API](https://platform.openai.com/) (ou `sentence-transformers`)
 * [FAISS](https://github.com/facebookresearch/faiss)
 * [dotenv](https://pypi.org/project/python-dotenv/)
 
@@ -170,5 +169,11 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## ✨ Autor
 
-Feito com ❤️ por [Nelson Walcow](https://github.com/nsw78/resume_matcher)
+Feito com ❤️ por [Nelson Walcow](https://github.com/nsw78)
 
+```
+
+---
+
+Se quiser que eu crie um PR no GitHub com isso, ou salve como `.md` e envie em `.zip`, é só falar!
+```
