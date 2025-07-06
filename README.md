@@ -6,6 +6,24 @@
 
 Este projeto utiliza inteligência artificial para classificar automaticamente currículos com base na descrição de uma vaga. Ele compara o conteúdo dos currículos com a vaga informada usando embeddings de linguagem natural e busca vetorial com FAISS.
 
+# 🤖 Resume Matcher
+
+Uma aplicação de IA que compara currículos com descrições de vagas usando embeddings vetoriais e busca por similaridade.
+
+---
+
+## 🔀 Versões do Projeto
+
+Este repositório possui duas versões:
+
+- [`main`](https://github.com/nsw78/resume_matcher/tree/main) → Usa a API da OpenAI (é necessário chave e plano)
+- [`local-ia`](https://github.com/nsw78/resume_matcher/tree/local-ia) → Usa modelos open-source com `sentence-transformers` (totalmente offline e gratuito)
+
+Você pode trocar de versão com:
+
+```bash
+git checkout local-ia
+
 ---
 
 ## 🚀 Funcionalidades
